@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ali.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdelrahman Ali Mohamed · AI Automation Engineer</title>
-  <meta name="description" content="AI Automation Engineer building production-grade agentic systems, LangGraph agents, and n8n automation workflows. Based in Egypt, available for remote contracts.">
+  <title>Abdelrahman Ali Mohamed · AI-Native Systems Builder</title>
+  <meta name="description" content="AI-native systems builder architecting and shipping production agentic systems, LangGraph agents, and automation workflows with full ownership from design through production. Based in Egypt, available for remote contracts.">
   <link rel="canonical" href="https://ali.rewireweb.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,24 +15,25 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #04060d;
-      --bg2: #070b16;
-      --surface: #0c1225;
-      --surface2: #111827;
-      --border: rgba(255,255,255,0.06);
-      --border-bright: rgba(255,255,255,0.14);
-      --cyan: #00d4ff;
-      --cyan-dim: rgba(0,212,255,0.12);
-      --cyan-glow: rgba(0,212,255,0.25);
-      --purple: #8b5cf6;
-      --purple-dim: rgba(139,92,246,0.12);
-      --green: #10b981;
-      --green-dim: rgba(16,185,129,0.12);
-      --amber: #f59e0b;
-      --text: #cbd5e1;
-      --text-bright: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;;
+      --bg: #06101c;
+      --bg2: #0b1728;
+      --surface: #101b2f;
+      --surface2: #16253b;
+      --surface3: rgba(10, 19, 34, 0.88);
+      --border: rgba(148,163,184,0.14);
+      --border-bright: rgba(148,163,184,0.28);
+      --cyan: #39d5ff;
+      --cyan-dim: rgba(57,213,255,0.12);
+      --cyan-glow: rgba(57,213,255,0.3);
+      --purple: #9c8cff;
+      --purple-dim: rgba(156,140,255,0.12);
+      --green: #34d399;
+      --green-dim: rgba(52,211,153,0.12);
+      --amber: #fbbf24;
+      --text: #d7e1ee;
+      --text-bright: #f8fbff;
+      --text-muted: #aab8cb;
+      --text-dim: #7d8ba1;
       --font-head: 'Space Grotesk', sans-serif;
       --font-body: 'Inter', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -44,7 +45,10 @@
 
     body {
       font-family: var(--font-body);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(57,213,255,0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(156,140,255,0.08), transparent 24%),
+        linear-gradient(180deg, var(--bg2) 0%, var(--bg) 28%, #040914 100%);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
@@ -104,15 +108,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(4,6,13,0.7);
+      background: rgba(6,16,28,0.78);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--border);
       transition: all 0.3s;
     }
 
     nav.scrolled {
-      background: rgba(4,6,13,0.92);
-      border-bottom-color: rgba(255,255,255,0.07);
+      background: rgba(6,16,28,0.94);
+      border-bottom-color: var(--border-bright);
     }
 
     .nav-logo {
@@ -141,7 +145,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--text-bright); }
+    .nav-links a:hover { color: var(--cyan); }
 
     .nav-cta {
       padding: 8px 18px;
@@ -156,7 +160,7 @@
     }
 
     .nav-cta:hover {
-      background: rgba(0,212,255,0.2) !important;
+      background: rgba(57,213,255,0.18) !important;
       color: var(--cyan) !important;
     }
 
@@ -254,15 +258,15 @@
 
     .hero-desc {
       font-size: 16px;
-      color: var(--text-muted);
-      max-width: 520px;
+      color: var(--text);
+      max-width: 640px;
       line-height: 1.8;
       margin-bottom: 36px;
       opacity: 0;
       animation: fadeUp 0.7s 0.65s forwards;
     }
 
-    .hero-desc strong { color: var(--text); }
+    .hero-desc strong { color: var(--text-bright); }
 
     .hero-actions {
       display: flex;
@@ -300,17 +304,17 @@
       gap: 8px;
       padding: 13px 28px;
       border: 1px solid var(--border-bright);
-      color: var(--text-muted);
+      color: var(--text);
       border-radius: 8px;
       font-size: 14px;
       font-weight: 500;
       text-decoration: none;
       transition: all 0.2s;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.04);
     }
 
     .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.25);
+      border-color: rgba(57,213,255,0.2);
       color: var(--text-bright);
       transform: translateY(-1px);
     }
@@ -332,7 +336,7 @@
       transition: color 0.2s;
     }
 
-    .social-link:hover { color: var(--text-muted); }
+    .social-link:hover { color: var(--cyan); }
 
     .social-link svg { width: 16px; height: 16px; }
 
@@ -369,6 +373,7 @@
       padding: 100px 48px;
       max-width: 1000px;
       margin: 0 auto;
+      position: relative;
     }
 
     @media (max-width: 640px) {
@@ -378,7 +383,7 @@
 
     .section-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+      background: linear-gradient(90deg, transparent, rgba(57,213,255,0.2), rgba(148,163,184,0.18), transparent);
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -404,8 +409,8 @@
 
     .sec-desc {
       font-size: 16px;
-      color: var(--text-muted);
-      max-width: 520px;
+      color: var(--text);
+      max-width: 620px;
       line-height: 1.8;
       margin-bottom: 52px;
     }
@@ -438,7 +443,7 @@
       padding: 32px 0;
       overflow: hidden;
       position: relative;
-      background: linear-gradient(180deg, transparent, rgba(0,212,255,0.02), transparent);
+      background: linear-gradient(180deg, rgba(57,213,255,0.03), rgba(16,27,47,0.75), rgba(57,213,255,0.03));
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
@@ -468,8 +473,8 @@
       font-weight: 500;
       white-space: nowrap;
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-      color: var(--text-muted);
+      background: rgba(16,27,47,0.86);
+      color: var(--text);
     }
 
     .skill-pill.cyan { border-color: rgba(0,212,255,0.2); color: var(--cyan); background: var(--cyan-dim); }
@@ -478,12 +483,13 @@
 
     /* ─── FLAGSHIP PROJECT ─── */
     .flagship {
-      background: linear-gradient(135deg, rgba(0,212,255,0.03) 0%, rgba(139,92,246,0.03) 100%);
-      border: 1px solid rgba(0,212,255,0.12);
+      background: linear-gradient(135deg, rgba(57,213,255,0.07) 0%, rgba(156,140,255,0.06) 100%);
+      border: 1px solid rgba(57,213,255,0.16);
       border-radius: 20px;
       padding: 48px;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 20px 50px rgba(2, 8, 23, 0.35);
     }
 
     .flagship::before {
@@ -547,7 +553,7 @@
     @media (max-width: 640px) { .metrics { grid-template-columns: repeat(2, 1fr); } }
 
     .metric {
-      background: rgba(0,0,0,0.3);
+      background: var(--surface3);
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: 20px 16px;
@@ -570,7 +576,7 @@
 
     /* ─── ARCHITECTURE DIAGRAM ─── */
     .arch-diagram {
-      background: rgba(0,0,0,0.4);
+      background: linear-gradient(180deg, rgba(9,17,31,0.86), rgba(13,24,41,0.92));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
@@ -598,14 +604,14 @@
       padding: 12px 16px;
       border-radius: 8px;
       margin-bottom: 2px;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.04);
       border: 1px solid transparent;
       transition: all 0.2s;
       cursor: default;
     }
 
     .arch-line:hover {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.07);
       border-color: var(--border);
     }
 
@@ -643,7 +649,7 @@
     }
 
     .tool-chip {
-      background: var(--surface);
+      background: rgba(18, 28, 46, 0.9);
       border: 1px solid rgba(139,92,246,0.2);
       border-radius: 6px;
       padding: 8px 12px;
@@ -700,7 +706,7 @@
     @media (max-width: 600px) { .tools-grid { grid-template-columns: 1fr; } }
 
     .tool-card {
-      background: var(--surface);
+      background: linear-gradient(180deg, rgba(16,27,47,0.92), rgba(11,18,32,0.96));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
@@ -721,25 +727,25 @@
       transition: opacity 0.3s;
     }
 
-    .tool-card:hover { border-color: rgba(0,212,255,0.2); transform: translateY(-4px); }
+    .tool-card:hover { border-color: rgba(57,213,255,0.24); transform: translateY(-4px); box-shadow: 0 18px 40px rgba(2, 8, 23, 0.3); }
     .tool-card:hover::before { opacity: 1; }
 
     /* ─── BROWSER MOCKUP ─── */
     .browser-mockup {
-      background: #0a0f1e;
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #0c1527;
+      border: 1px solid rgba(148,163,184,0.14);
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 20px;
     }
 
     .browser-bar {
-      background: #141b2d;
+      background: #152136;
       padding: 10px 16px;
       display: flex;
       align-items: center;
       gap: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(148,163,184,0.1);
     }
 
     .browser-dots { display: flex; gap: 5px; }
@@ -750,7 +756,7 @@
 
     .browser-url {
       flex: 1;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.06);
       border-radius: 4px;
       padding: 4px 12px;
       font-size: 11px;
@@ -983,25 +989,29 @@
     .exp-item {
       display: grid;
       grid-template-columns: 1fr;
-      padding: 36px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(16,27,47,0.76), rgba(9,17,31,0.78));
       position: relative;
+      margin-bottom: 18px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .exp-item:last-child { border-bottom: none; }
+    .exp-item:last-child { margin-bottom: 0; }
 
     .exp-item::before {
-      content: '';
-      position: absolute;
-      left: -48px;
-      top: 44px;
-      width: 1px;
-      height: calc(100% - 44px);
-      background: var(--border);
+      content: none;
+    }
+
+    .exp-item:hover {
+      border-color: rgba(57,213,255,0.18);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(2, 8, 23, 0.24);
     }
 
     @media (min-width: 640px) {
-      .exp-item { grid-template-columns: 200px 1fr; gap: 32px; }
+      .exp-item { grid-template-columns: 220px 1fr; gap: 32px; }
     }
 
     .exp-meta { padding-top: 2px; }
@@ -1057,7 +1067,7 @@
 
     .exp-bullets li {
       font-size: 14px;
-      color: var(--text-muted);
+      color: var(--text);
       line-height: 1.7;
       padding-left: 18px;
       position: relative;
@@ -1083,14 +1093,18 @@
     @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
 
     .skill-card {
-      background: var(--surface);
+      background: linear-gradient(180deg, rgba(16,27,47,0.94), rgba(11,18,32,0.96));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .skill-card:hover { border-color: var(--border-bright); }
+    .skill-card:hover {
+      border-color: rgba(57,213,255,0.18);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(2, 8, 23, 0.22);
+    }
 
     .skill-card-head {
       display: flex;
@@ -1130,6 +1144,26 @@
       border: 1px solid rgba(255,255,255,0.07);
       color: var(--text-muted);
       font-family: var(--font-mono);
+    }
+
+    .skill-card-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .skill-copy-line {
+      font-size: 15px;
+      color: var(--text-bright);
+      line-height: 1.75;
+    }
+
+    .skill-copy-line strong { color: var(--cyan); }
+
+    .skill-copy-body {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.8;
     }
 
     /* ─── FOOTER ─── */
@@ -1220,10 +1254,10 @@
       66% { transform: translate(-20px, 20px) scale(0.95); }
     }
 
-    /* ─── TERMINAL MOCKUP FOR DENTALL ─── */
+    /* ─── TERMINAL MOCKUP FOR FLAGSHIP PROJECT ─── */
     .terminal {
       background: #020408;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(148,163,184,0.14);
       border-radius: 10px;
       overflow: hidden;
       font-family: var(--font-mono);
@@ -1232,12 +1266,12 @@
     }
 
     .term-bar {
-      background: #0d1117;
+      background: #0f1725;
       padding: 10px 16px;
       display: flex;
       align-items: center;
       gap: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(148,163,184,0.1);
     }
 
     .term-dots { display: flex; gap: 5px; }
@@ -1315,9 +1349,8 @@
           <span id="typewriter"></span><span class="typewriter-cursor"></span>
         </p>
         <p class="hero-desc">
-          I build <strong>production-grade agentic systems</strong> and deploy them end-to-end.
-          LangGraph multi-tool agents, self-hosted infrastructure, n8n automation pipelines —
-          from architecture through observability. Based in Egypt, working globally.
+          AI-orchestrated development. I architect the system, an AI writes the first draft, and I own everything that ships.
+          I build <strong>production-grade agentic systems</strong> end-to-end, from architecture through observability. Based in Egypt, working globally.
         </p>
         <div class="hero-actions">
           <a href="mailto:aaly6422@gmail.com" class="btn-primary">
@@ -1354,38 +1387,38 @@
   <!-- SKILLS STRIP -->
   <div class="skills-strip">
     <div class="skills-track" id="skills-track">
-      <span class="skill-pill cyan">🤖 LangGraph</span>
-      <span class="skill-pill">FastAPI</span>
-      <span class="skill-pill cyan">Claude / GPT / Gemini</span>
+      <span class="skill-pill cyan">AI-Orchestrated Delivery</span>
+      <span class="skill-pill">System Architecture</span>
+      <span class="skill-pill cyan">LangGraph</span>
       <span class="skill-pill purple">n8n</span>
+      <span class="skill-pill">FastAPI</span>
+      <span class="skill-pill green">Python / SQL / JavaScript</span>
+      <span class="skill-pill cyan">Observability</span>
+      <span class="skill-pill purple">Dify RAG</span>
       <span class="skill-pill">pgvector</span>
       <span class="skill-pill green">Docker Compose</span>
       <span class="skill-pill cyan">OpenRouter</span>
-      <span class="skill-pill purple">Dify RAG</span>
       <span class="skill-pill">Langfuse</span>
-      <span class="skill-pill green">Hetzner VPS</span>
-      <span class="skill-pill">Python</span>
       <span class="skill-pill purple">Supabase</span>
-      <span class="skill-pill cyan">Prompt Engineering</span>
       <span class="skill-pill">Traefik</span>
-      <span class="skill-pill green">Coolify</span>
-      <span class="skill-pill">Make.com</span>
-      <span class="skill-pill cyan">🤖 LangGraph</span>
-      <span class="skill-pill">FastAPI</span>
-      <span class="skill-pill cyan">Claude / GPT / Gemini</span>
+      <span class="skill-pill green">Hetzner VPS</span>
+      <span class="skill-pill">Production Ownership</span>
+      <span class="skill-pill cyan">AI-Orchestrated Delivery</span>
+      <span class="skill-pill">System Architecture</span>
+      <span class="skill-pill cyan">LangGraph</span>
       <span class="skill-pill purple">n8n</span>
+      <span class="skill-pill">FastAPI</span>
+      <span class="skill-pill green">Python / SQL / JavaScript</span>
+      <span class="skill-pill cyan">Observability</span>
+      <span class="skill-pill purple">Dify RAG</span>
       <span class="skill-pill">pgvector</span>
       <span class="skill-pill green">Docker Compose</span>
       <span class="skill-pill cyan">OpenRouter</span>
-      <span class="skill-pill purple">Dify RAG</span>
       <span class="skill-pill">Langfuse</span>
-      <span class="skill-pill green">Hetzner VPS</span>
-      <span class="skill-pill">Python</span>
       <span class="skill-pill purple">Supabase</span>
-      <span class="skill-pill cyan">Prompt Engineering</span>
       <span class="skill-pill">Traefik</span>
-      <span class="skill-pill green">Coolify</span>
-      <span class="skill-pill">Make.com</span>
+      <span class="skill-pill green">Hetzner VPS</span>
+      <span class="skill-pill">Production Ownership</span>
     </div>
   </div>
 
@@ -1393,15 +1426,15 @@
   <section class="section" id="work">
     <div class="reveal">
       <div class="sec-label">Flagship Project</div>
-      <h2 class="sec-title">DentallManager AI Copilot</h2>
+      <h2 class="sec-title">AI Copilot for a Dental Click Management Software Company</h2>
       <p class="sec-desc">A stateful, multi-tool LangGraph agent in production on self-hosted infrastructure. Clinic staff ask questions in plain language and get answers from live operational data, documentation, and internal documents — through a single interface.</p>
     </div>
 
     <div class="flagship reveal reveal-delay-2">
       <div class="flagship-header">
         <div>
-          <div class="flagship-title">DentallManager AI Copilot</div>
-          <div class="flagship-subtitle">For <a href="https://dentalnetwork.nl" target="_blank" style="color:var(--cyan);text-decoration:none;">Dental Network · Netherlands</a> — natural-language interface over a 197-table MySQL production database</div>
+          <div class="flagship-title">Dental Practice Copilot</div>
+          <div class="flagship-subtitle">Built for a dental click management software company serving clinics across Europe. Natural-language interface over a 197-table MySQL production database.</div>
         </div>
         <div class="flagship-badges">
           <span class="fbadge live">
@@ -1421,11 +1454,11 @@
             <div class="term-dot" style="background:#febc2e"></div>
             <div class="term-dot" style="background:#28c840"></div>
           </div>
-          <span class="term-title">dentallmanager-brain · LangGraph Agent · FastAPI</span>
+          <span class="term-title">dental-copilot-brain · LangGraph Agent · FastAPI</span>
         </div>
         <div class="term-body">
           <div class="term-line"><span class="term-prompt">user@clinic:~$</span><span class="term-cmd"> chat --session clinic_staff_42</span></div>
-          <div class="term-output dim">Connected to DentallManager Brain · Claude Haiku 4.5 via OpenRouter</div>
+          <div class="term-output dim">Connected to Dental Copilot Brain · Claude Haiku 4.5 via OpenRouter</div>
           <div class="term-output dim">Memory loaded: SQLiteSaver (today's session)</div>
           <br>
           <div class="term-output" style="color:#e2e8f0;">👤 How many appointments does Dr. Ahmed have this week?</div>
@@ -1655,7 +1688,7 @@
     <div class="reveal">
       <div class="sec-label">Experience</div>
       <h2 class="sec-title">Where I've Built</h2>
-      <p class="sec-desc">End-to-end delivery across agentic AI systems, automation pipelines, and growth engineering.</p>
+      <p class="sec-desc">End-to-end delivery across agentic AI systems, automation pipelines, and growth engineering, with architecture ownership carried through to production behavior.</p>
     </div>
 
     <div class="exp-list">
@@ -1663,8 +1696,8 @@
       <div class="exp-item reveal">
         <div class="exp-meta">
           <div class="exp-period">2025 — Present</div>
-          <div class="exp-company"><a href="https://dentalnetwork.nl" target="_blank">Dental Network</a> · dentalnetwork.nl</div>
-          <div class="exp-location">Netherlands · Remote</div>
+          <div class="exp-company">Dental Click Management Software Company · Europe</div>
+          <div class="exp-location">Remote</div>
         </div>
         <div>
           <div class="exp-role">AI & Automation Specialist</div>
@@ -1673,7 +1706,7 @@
             <span class="exp-tag">n8n</span><span class="exp-tag">Langfuse</span><span class="exp-tag">Docker Compose</span>
           </div>
           <ul class="exp-bullets">
-            <li>Designed and deployed <strong>DentallManager AI Copilot</strong> — a stateful LangGraph agent routing natural-language queries across a 197-table MySQL database, a RAG documentation layer, and semantic document search.</li>
+            <li>Designed and deployed an <strong>AI copilot for a dental click management platform</strong> — a stateful LangGraph agent routing natural-language queries across a 197-table MySQL database, a RAG documentation layer, and semantic document search.</li>
             <li>Architected a <strong>zero-credential agent layer</strong> with two-layer SQL validation and self-healing retry logic on MySQL errors.</li>
             <li>Built full LLM observability with Langfuse (tool calls, token usage, cost, latency per session) and <strong>persistent per-user daily memory</strong> via LangGraph SQLiteSaver.</li>
             <li>Delivered <strong>Dutch/English multi-language support</strong> across 12 services on a single self-hosted server with zero managed-cloud dependencies.</li>
@@ -1731,8 +1764,8 @@
   <section class="section" id="skills">
     <div class="reveal">
       <div class="sec-label">Core Skills</div>
-      <h2 class="sec-title">The Full Stack</h2>
-      <p class="sec-desc">End-to-end capability across agentic AI, automation infrastructure, and growth systems.</p>
+      <h2 class="sec-title">How I Build</h2>
+      <p class="sec-desc">AI is part of my delivery process, not a disclaimer. I design the system, direct the build, review the code, and own how it behaves in production.</p>
     </div>
 
     <div class="skills-grid">
@@ -1779,11 +1812,15 @@
       <div class="skill-card reveal reveal-delay-4">
         <div class="skill-card-head">
           <div class="skill-icon amber">⌨️</div>
-          <div class="skill-card-title">Languages</div>
+          <div class="skill-card-title">How I Ship Code</div>
         </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
-          <span class="skill-tag">JavaScript (Node)</span><span class="skill-tag">Bash</span><span class="skill-tag">JSON</span>
+        <div class="skill-card-copy">
+          <p class="skill-copy-line"><strong>Python · SQL · JavaScript, AI-orchestrated, production-shipped</strong></p>
+          <p class="skill-copy-body">I build with AI as my primary tool, not around it. I architect the system: the data flow, the schemas, the logic, the failure points, then direct Claude Code and AI pair-programming to turn that architecture into working Python, SQL, and JavaScript.</p>
+        </div>
+        <div class="skill-tags" style="margin-top:16px;">
+          <span class="skill-tag">Architecture</span><span class="skill-tag">Code Review</span>
+          <span class="skill-tag">Debugging</span><span class="skill-tag">Production Ownership</span>
         </div>
       </div>
 
@@ -1930,11 +1967,11 @@
 
   /* ─── TYPEWRITER ─── */
   const phrases = [
-    'AI Automation Engineer',
-    'LangGraph Agent Builder',
-    'n8n Pipeline Architect',
+    'AI-Native Systems Builder',
+    'Agentic Workflow Architect',
+    'AI-Orchestrated Delivery',
     'Self-Hosted AI Infrastructure',
-    'Production Systems Engineer',
+    'Production Systems Operator',
   ];
   let pi = 0, ci = 0, deleting = false;
   const tw = document.getElementById('typewriter');
