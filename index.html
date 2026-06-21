@@ -175,11 +175,20 @@
       display: flex;
       align-items: center;
       padding: 120px 48px 80px;
-      max-width: 1000px;
+      max-width: 1180px;
       margin: 0 auto;
+      width: 100%;
     }
 
-    .hero-inner { max-width: 700px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-copy { max-width: 780px; }
 
     .hero-badge {
       display: inline-flex;
@@ -211,49 +220,49 @@
       50% { box-shadow: 0 0 0 6px rgba(0,212,255,0); }
     }
 
-    .hero-name {
+    .hero-title {
       font-family: var(--font-head);
-      font-size: clamp(42px, 6vw, 72px);
+      font-size: clamp(40px, 5.2vw, 52px);
       font-weight: 700;
       color: var(--text-bright);
       letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 14px;
+      line-height: 1.02;
+      margin-bottom: 16px;
       opacity: 0;
       animation: fadeUp 0.7s 0.35s forwards;
     }
 
-    .hero-name .line2 {
+    .hero-title .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-title .line2 {
       background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
+    .hero-nameplate {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.45s forwards;
+    }
+
     .hero-role {
       font-family: var(--font-head);
-      font-size: clamp(16px, 2.5vw, 22px);
+      font-size: clamp(15px, 1.8vw, 19px);
       font-weight: 500;
-      color: var(--text-muted);
-      margin-bottom: 24px;
+      color: var(--text);
+      margin-bottom: 22px;
       opacity: 0;
       animation: fadeUp 0.7s 0.5s forwards;
-      min-height: 30px;
-    }
-
-    .typewriter-cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background: var(--cyan);
-      margin-left: 4px;
-      vertical-align: middle;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
     }
 
     .hero-desc {
@@ -272,9 +281,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
       opacity: 0;
-      animation: fadeUp 0.7s 0.8s forwards;
+      animation: fadeUp 0.7s 1s forwards;
     }
 
     .btn-primary {
@@ -323,7 +332,105 @@
       display: flex;
       gap: 16px;
       opacity: 0;
-      animation: fadeUp 0.7s 0.95s forwards;
+      animation: fadeUp 0.7s 1.12s forwards;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.82s forwards;
+    }
+
+    .hero-metric {
+      padding: 16px 14px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(16,27,47,0.92), rgba(11,18,32,0.96));
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 24px rgba(2, 8, 23, 0.18);
+    }
+
+    .hero-metric-num {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    .hero-metric-label {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: flex-end;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.55s forwards;
+    }
+
+    .flow-card {
+      width: min(100%, 420px);
+      padding: 26px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(16,27,47,0.94), rgba(9,17,31,0.98));
+      border: 1px solid var(--border-bright);
+      box-shadow: 0 26px 60px rgba(2, 8, 23, 0.34);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(57,213,255,0.12), transparent 34%);
+      pointer-events: none;
+    }
+
+    .flow-kicker {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(148,163,184,0.12);
+    }
+
+    .flow-step-title {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+    }
+
+    .flow-step-desc {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--cyan);
+      font-size: 18px;
+      padding: 8px 0;
     }
 
     .social-link {
@@ -379,6 +486,21 @@
     @media (max-width: 640px) {
       .hero, .section { padding-left: 20px; padding-right: 20px; }
       .section { padding-top: 72px; padding-bottom: 72px; }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .hero-title .title-line { white-space: normal; }
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-copy { max-width: none; }
+
+      .hero-visual {
+        justify-content: flex-start;
+      }
     }
 
     .section-divider {
@@ -1202,7 +1324,15 @@
       background-clip: text;
     }
 
-    .footer-desc { font-size: 16px; color: var(--text-muted); margin-bottom: 36px; }
+    .footer-desc {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 36px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
 
     .footer-links {
       display: flex;
@@ -1336,45 +1466,84 @@
   <!-- HERO -->
   <section style="position:relative; min-height:100vh; display:flex; align-items:center;">
     <div class="hero">
-      <div class="hero-inner">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          Available for remote contracts
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            Available for remote contracts
+          </div>
+          <h1 class="hero-title">
+            <span class="title-line">Agentic Workflow Architect</span>
+            <span class="title-line line2">AI Systems Builder</span>
+          </h1>
+          <div class="hero-nameplate">Abdelrahman Ali Mohamed</div>
+          <p class="hero-role">AI agents · workflow automation · self-hosted business systems</p>
+          <p class="hero-desc">
+            AI-orchestrated development. I architect the system, an AI writes the first draft, and I own everything that ships.
+            I build <strong>production-grade agentic systems</strong> end-to-end, from architecture through observability. Based in Egypt, working globally.
+          </p>
+          <div class="hero-metrics">
+            <div class="hero-metric">
+              <span class="hero-metric-num">4</span>
+              <span class="hero-metric-label">Live AI tools shipped and publicly accessible</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-num">12</span>
+              <span class="hero-metric-label">Self-hosted services running on one production server</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-num">197</span>
+              <span class="hero-metric-label">Production MySQL tables handled in the flagship deployment</span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="mailto:aaly6422@gmail.com" class="btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+              Get in touch
+            </a>
+            <a href="#work" class="btn-secondary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              View my work
+            </a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://rewireweb.com" class="social-link" target="_blank">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              rewireweb.com
+            </a>
+            <a href="https://linkedin.com/in/abdelrahmanalimohamed" class="social-link" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/ali-rewireweb" class="social-link" target="_blank">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
         </div>
-        <h1 class="hero-name">
-          Abdelrahman<br>
-          <span class="line2">Ali Mohamed</span>
-        </h1>
-        <p class="hero-role">
-          <span id="typewriter"></span><span class="typewriter-cursor"></span>
-        </p>
-        <p class="hero-desc">
-          AI-orchestrated development. I architect the system, an AI writes the first draft, and I own everything that ships.
-          I build <strong>production-grade agentic systems</strong> end-to-end, from architecture through observability. Based in Egypt, working globally.
-        </p>
-        <div class="hero-actions">
-          <a href="mailto:aaly6422@gmail.com" class="btn-primary">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-            Get in touch
-          </a>
-          <a href="#work" class="btn-secondary">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-            View my work
-          </a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://rewireweb.com" class="social-link" target="_blank">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            rewireweb.com
-          </a>
-          <a href="https://linkedin.com/in/abdelrahmanalimohamed" class="social-link" target="_blank">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/ali-rewireweb" class="social-link" target="_blank">
-            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
+        <div class="hero-visual">
+          <div class="flow-card">
+            <div class="flow-kicker">How I Turn Work Into Systems</div>
+            <div class="flow-step">
+              <span class="flow-step-title">Business Problem</span>
+              <div class="flow-step-desc">Identify the repetitive bottleneck, messy handoffs, and the data that actually matters.</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+              <span class="flow-step-title">AI Agent</span>
+              <div class="flow-step-desc">Design the agent logic, retrieval layer, validation rules, and failure handling.</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+              <span class="flow-step-title">Automation Layer</span>
+              <div class="flow-step-desc">Connect workflows, APIs, databases, and notifications into a reliable operating system.</div>
+            </div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step">
+              <span class="flow-step-title">Business Outcome</span>
+              <div class="flow-step-desc">Save time, remove repetitive work, and give teams a system they can trust in production.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1834,8 +2003,8 @@
     <div class="footer-glow"></div>
     <div class="reveal">
       <div class="sec-label" style="text-align:center;margin-bottom:16px;">Let's work together</div>
-      <h2 class="footer-title">Ready to build<br><span>something real?</span></h2>
-      <p class="footer-desc">Available for remote AI automation, agentic systems, and infrastructure contracts.</p>
+      <h2 class="footer-title">Ready to <span>Automate Your Business?</span></h2>
+      <p class="footer-desc">I design and deploy AI agents, workflow automation, and business systems that save time and eliminate repetitive work.</p>
     </div>
     <div class="footer-links reveal reveal-delay-2">
       <a href="mailto:aaly6422@gmail.com" class="btn-primary">
@@ -1964,30 +2133,6 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   });
-
-  /* ─── TYPEWRITER ─── */
-  const phrases = [
-    'AI-Native Systems Builder',
-    'Agentic Workflow Architect',
-    'AI-Orchestrated Delivery',
-    'Self-Hosted AI Infrastructure',
-    'Production Systems Operator',
-  ];
-  let pi = 0, ci = 0, deleting = false;
-  const tw = document.getElementById('typewriter');
-
-  function typewrite() {
-    const phrase = phrases[pi];
-    if (!deleting) {
-      tw.textContent = phrase.slice(0, ++ci);
-      if (ci === phrase.length) { deleting = true; setTimeout(typewrite, 2200); return; }
-    } else {
-      tw.textContent = phrase.slice(0, --ci);
-      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-    }
-    setTimeout(typewrite, deleting ? 38 : 68);
-  }
-  setTimeout(typewrite, 1200);
 
   /* ─── SCROLL REVEAL ─── */
   const observer = new IntersectionObserver(entries => {
